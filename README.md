@@ -1,22 +1,17 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome books
+# To Do List
 
-![screenshot](./awesomebook.png)
 
-> This is a team project in the Microverse second Module. The project is a book application that enables a user to add and remove books to a list
+> This is a solo project in the Microverse second Module. The project is an application that enables a user to add and remove activities from a list and other functionalities, making it your handy To Do List.
 
-The endgoal of the project is to build the application using Vanilla JavaScript. The project was built through the following stage.  
-Click [here](https://daudi13.github.io/Awesome-books/) to get a live preview of the project
+The endgoal of the project is to build the application using ES6 modules.
+Click [here](https://i-max-xi.github.io/To-do-list/) to get a live preview of the project
 
-## stages
 
-- Project 1: Manage books collection (Plain JS with Objects)
-- Project 2: Manage books collection (Plain JS with classes) and basic CSS
-- Project 3: Create a complete website with navigation
-#### Cloning the project
+## Cloning the project
 ```
-git clone  https://github.com/daudi13/Awesome-books <Your-Build-Directory>
+git clone  https://github.com/i-max-xi/To-do-list.git <Your-Build-Directory>
 ```
 
 ## Getting packages and debuging with Stylelint
