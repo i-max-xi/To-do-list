@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 30px;
+  background-color: rgb(228, 224, 224);
+  display: flex;
+  align-content: center;
+}
+
+.container {
+  width: 90%;
+  margin: 5%;
+  background-color: white;
+  box-shadow: 1px 2px 2px 1px rgb(99, 92, 92);
+}
+
+.container > div {
+  border-bottom: 1px solid rgb(156, 156, 156);
+  padding: 5px;
+}
+
+.holder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.symbols {
+  align-self: center;
+  float: right;
+  opacity: 0.3;
+  font-size: 12px;
+}
+
+input {
+  border: none;
+}
+
+#clear {
+  background-color: rgb(228, 224, 224);
+  text-align: center;
+}
