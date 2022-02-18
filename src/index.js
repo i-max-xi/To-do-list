@@ -1,5 +1,4 @@
-import _, { add } from "lodash";
-import "./style.css";
+import './style.css';
 
 class TaskObj {
   constructor(description, completed, index) {
@@ -9,23 +8,25 @@ class TaskObj {
   }
 }
 
-//Cde Action
-let task1 = new TaskObj("Wash the dishes", true, 0);
-let task2 = new TaskObj("Complete to do list", true, 1);
+//Code Action
+
+let task1 = new TaskObj('Wash the dishes', true, 0);
+let task2 = new TaskObj('Complete to do list', true, 1);
 const taskArr = [];
 taskArr.push(task1, task2);
 
 const display = (item, index) => {
   //Variables
+
   let taskIndex = taskArr[index].index;
-  const taskSection = document.querySelector("#taskSection");
+  const taskSection = document.querySelector('#taskSection');
   const div = document.createElement('div');
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  const span = document.createElement("span");
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  const span = document.createElement('span');
   span.innerHTML = `&#8942;`;
-  span.classList.add("symbols");
-  const taskText = document.createElement("span");
+  span.classList.add('symbols');
+  const taskText = document.createElement('span');
 
   //Display Actions
 
