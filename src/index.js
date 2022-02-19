@@ -1,8 +1,8 @@
 'useStrict';
 
-import './style.css';
-import * as Add from './add.js';
+import "./style.css";
+import * as Add from "./add.js";
 
-const Enter = document.querySelector('#enter');
+const Enter = document.querySelector("#enter");
 
-Enter.addEventListener('click', Add.addItem);
+Enter.addEventListener('click', (Add.addItem));

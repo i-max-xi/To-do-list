@@ -1,4 +1,5 @@
 import removeTask from './remove.js';
+
 export class TaskObj {
   constructor(description, completed, index) {
     this.description = description;
@@ -78,7 +79,7 @@ const addItem = () => {
     const delBtn = document.querySelectorAll('.delSymbol');
     delBtn.forEach((e) => {
       e.addEventListener('click', removeTask);
-    }); 
+    });
   }
 };
 
