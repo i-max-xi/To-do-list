@@ -20,8 +20,22 @@ const editTask = (e) => {
   const clickedEdit = e.target;
   const parent = clickedEdit.parentNode;
   const content = parent.querySelector('.taskElement');
-  const newContent = prompt('edit your task here...');
-  content.innerHTML = newContent;
+  const newContent = document.createElement('input');
+  newContent.placeholder = 'Enter replacement here...';
+  const newHead = document.querySelector('#head');
+  newHead.appendChild(newContent);
+
+  const OK = document.createElement('button');
+  OK.innerHTML = "OK";
+  OK.id = 'ok';
+  newHead.appendChild(OK); 
+  const OKbtn = document.querySelector('#ok');
+
+  OKbtn.addEventListener('click',()=>{
+    content.innerText = newContent.value;
+    newContent.remove();
+    OK.remove();
+}) 
 };
 
 const addItem = () => {
