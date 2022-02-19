@@ -1,5 +1,3 @@
-import {TaskObj } from './add.js';
-
 export const rearrange = (item, pos) => {
   item.index = pos + 1;
 };
