@@ -26,16 +26,16 @@ const editTask = (e) => {
   newHead.appendChild(newContent);
 
   const OK = document.createElement('button');
-  OK.innerHTML = "OK";
+  OK.innerHTML = 'OK';
   OK.id = 'ok';
-  newHead.appendChild(OK); 
+  newHead.appendChild(OK);
   const OKbtn = document.querySelector('#ok');
 
-  OKbtn.addEventListener('click',()=>{
+  OKbtn.addEventListener('click', () => {
     content.innerText = newContent.value;
     newContent.remove();
     OK.remove();
-}) 
+  });
 };
 
 const addItem = () => {
