@@ -1,12 +1,12 @@
-import { addItem, TaskObj } from './add';
+import {TaskObj } from './add.js';
 
 export const rearrange = (item, pos) => {
   item.index = pos + 1;
 };
 
 const removeTask = (e) => {
-  let clickedRemove = e.target;
-  let parent = clickedRemove.parentNode;
+  const clickedRemove = e.target;
+  const parent = clickedRemove.parentNode;
   parent.remove();
   TaskObj.taskArr.splice(clickedRemove.id, 1);
   TaskObj.taskArr.forEach(rearrange);
