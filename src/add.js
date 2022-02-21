@@ -1,4 +1,5 @@
-import { CheckFunct } from "./interact.js";
+import { CheckFunct } from './interact.js';
+
 export class TaskObj {
   constructor(description, completed, index) {
     this.description = description;
@@ -14,7 +15,7 @@ export class TaskObj {
 
   static x = 0; // edit ID
 
-  static z = 0; //checkbox ID
+  static z = 0; //  checkbox ID
 
   static old = JSON.parse(localStorage.getItem('Tasks'));
 }
@@ -118,7 +119,7 @@ const addItem = () => {
       e.addEventListener('click', removeTask);
     });
 
-    //implement check function
+    //  implement check function
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((e) => {

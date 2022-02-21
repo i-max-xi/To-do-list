@@ -64,8 +64,7 @@ const display = () => {
       e.addEventListener('click', Add.removeTask);
     });
 
-
-      //implement check function
+    //implement check function
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((e) => {
@@ -73,16 +72,14 @@ const display = () => {
     });
 
     // check those with true
-    if(Add.TaskObj.old[p].completed == true){
-      checkbox.setAttribute('checked','true');
+    if (Add.TaskObj.old[p].completed === true) {
+      checkbox.setAttribute('checked', 'true');
     }
   }
-  console.log(Add.TaskObj.taskArr);
 };
 
 display();
 
 const clearBtn = document.querySelector('#clear');
-
 
 clearBtn.addEventListener('click', interact.clear);
