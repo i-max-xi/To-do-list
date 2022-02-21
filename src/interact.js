@@ -30,7 +30,6 @@ const clear = () => {
   TaskObj.taskArr.filter(clearArrItem);
   TaskObj.taskArr.forEach(rearrange);
   localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
-  console.log(TaskObj.taskArr);
 };
 
 export { CheckFunct, clear };
