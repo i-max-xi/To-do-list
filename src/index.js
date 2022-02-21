@@ -64,7 +64,7 @@ const display = () => {
       e.addEventListener('click', Add.removeTask);
     });
 
-    //implement check function
+    //  implement check function
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((e) => {

@@ -1,4 +1,4 @@
-import { TaskObj, rearrange } from './add.js';
+import { TaskObj } from './add.js';
 
 const CheckFunct = (e) => {
   const clickedCheck = e.target;
@@ -13,11 +13,15 @@ const CheckFunct = (e) => {
   }
 };
 
+const rearrange = (item, pos) => {
+  item.index = pos + 1;
+};
+
 const clearArrItem = (el) => {
-  if (el.completed == true) {
+  if (el.completed === true) {
     TaskObj.taskArr.splice(el.index, 1);
-    return el;
   }
+  return el;
 };
 
 const clear = () => {
