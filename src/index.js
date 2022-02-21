@@ -2,15 +2,11 @@
 
 import './style.css';
 import * as Add from './add.js';
-// import * as interact from './interact.js';
+import * as interact from './interact.js';
 
 const Enter = document.querySelector('#enter');
 
 Enter.addEventListener('click', Add.addItem);
-
-// if(interact.theCheckbox){
-//     interact.CheckFunct();
-// }
 
 const display = () => {
   for (let p = 0; p < Add.TaskObj.old.length; p += 1) {
@@ -64,6 +60,14 @@ const display = () => {
     const delBtn = document.querySelectorAll('.delSymbol');
     delBtn.forEach((e) => {
       e.addEventListener('click', Add.removeTask);
+    });
+
+
+      //implement check function
+
+    const checkBtn = document.querySelectorAll('.checks');
+    checkBtn.forEach((e) => {
+      e.addEventListener('change', interact.CheckFunct);
     });
   }
 };
