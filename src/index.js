@@ -4,6 +4,8 @@ import './style.css';
 import * as Add from './add.js';
 import * as interact from './interact.js';
 
+taskArr = [];
+
 const Enter = document.querySelector('#enter');
 
 Enter.addEventListener('click', Add.addItem);
@@ -40,7 +42,7 @@ const display = () => {
     const taskText = document.createElement('span');
 
     taskText.innerHTML = Add.TaskObj.old[p].description;
-    Add.TaskObj.taskArr.push(Add.TaskObj.old[p]);
+    Add.taskArr.push(Add.TaskObj.old[p]);
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);

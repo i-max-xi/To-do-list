@@ -1,15 +1,13 @@
-import { TaskObj } from './add.js';
-
 const CheckFunct = (e) => {
   const clickedCheck = e.target;
   if (clickedCheck.checked) {
-    TaskObj.taskArr[clickedCheck.id].completed = true;
+    taskArr[clickedCheck.id].completed = true;
     clickedCheck.classList.add('completed');
-    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+    localStorage.setItem('Tasks', JSON.stringify(taskArr));
   } else {
-    TaskObj.taskArr[clickedCheck.id].completed = false;
+    taskArr[clickedCheck.id].completed = false;
     clickedCheck.classList.remove('completed');
-    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+    localStorage.setItem('Tasks', JSON.stringify(taskArr));
   }
 };
 
@@ -19,7 +17,7 @@ const rearrange = (item, pos) => {
 
 const clearArrItem = (el) => {
   if (el.completed === true) {
-    TaskObj.taskArr.splice(el.index, 1);
+    taskArr.splice(el.index, 1);
   }
   return el;
 };
@@ -29,11 +27,11 @@ const clear = () => {
 
   completed.forEach((element) => {
     element.parentNode.remove();
-    TaskObj.taskArr.splice(element.index, 1);
+    taskArr.splice(element.index, 1);
   });
-  TaskObj.taskArr.filter(clearArrItem);
-  TaskObj.taskArr.forEach(rearrange);
-  localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+  taskArr.filter(clearArrItem);
+  taskArr.forEach(rearrange);
+  localStorage.setItem('Tasks', JSON.stringify(taskArr));
 };
 
 export { CheckFunct, clear };
