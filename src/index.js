@@ -16,7 +16,6 @@ const display = () => {
   for (let p = 0; p < Add.TaskObj.old.length; p += 1) {
     //  Variables
     const taskSection = document.querySelector('#taskSection');
-    const inputted = document.querySelector('input').value;
     const newdiv = document.createElement('div');
 
     const checkbox = document.createElement('input');
