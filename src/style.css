@@ -31,8 +31,15 @@ body {
 .symbols {
   align-self: center;
   float: right;
-  opacity: 0.3;
-  font-size: 12px;
+  opacity: 0.5;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+#delSymbol {
+  opacity: 1;
+  color: black;
+  font-size: 18px;
 }
 
 input {

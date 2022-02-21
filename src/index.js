@@ -1,40 +1,71 @@
+'useStrict';
+
 import './style.css';
+import * as Add from './add.js';
+// import * as interact from './interact.js';
 
-class TaskObj {
-  constructor(description, completed, index) {
-    this.description = description;
-    this.completed = completed;
-    this.index = index;
+const Enter = document.querySelector('#enter');
+
+Enter.addEventListener('click', Add.addItem);
+
+// if(interact.theCheckbox){
+//     interact.CheckFunct();
+// }
+
+const display = () => {
+  for (let p = 0; p < Add.TaskObj.old.length; p += 1) {
+    //  Variables
+    const taskSection = document.querySelector('#taskSection');
+    const newdiv = document.createElement('div');
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checks');
+
+    const edit = document.createElement('span');
+    edit.innerHTML = '&#9998;';
+    edit.classList.add('symbols', 'editSymbol');
+    edit.id = Add.TaskObj.x;
+    Add.TaskObj.x += 1;
+
+    const del = document.createElement('span');
+    del.innerHTML = '&#x1f5d1;';
+    del.classList.add('symbols', 'delSymbol');
+    del.id = Add.TaskObj.i;
+    Add.TaskObj.i += 1;
+
+    const move = document.createElement('span');
+    move.innerHTML = '&#8942;';
+    move.classList.add('symbols');
+
+    //  Implementation
+    const taskText = document.createElement('span');
+
+    taskText.innerHTML = Add.TaskObj.old[p].description;
+    Add.TaskObj.taskArr.push(Add.TaskObj.old[p]);
+    taskText.classList.add('taskElement');
+    newdiv.appendChild(checkbox);
+    newdiv.appendChild(taskText);
+    newdiv.appendChild(move);
+    newdiv.appendChild(del);
+    newdiv.appendChild(edit);
+    taskSection.appendChild(newdiv);
+    document.querySelector('input').value = '';
+
+    //  implement edit btn
+
+    const editBtn = document.querySelectorAll('.editSymbol');
+    editBtn.forEach((e) => {
+      e.addEventListener('click', Add.editTask);
+    });
+
+    //  implement removeBtn
+
+    const delBtn = document.querySelectorAll('.delSymbol');
+    delBtn.forEach((e) => {
+      e.addEventListener('click', Add.removeTask);
+    });
   }
-}
-
-//  Code Action
-
-const task1 = new TaskObj('Wash the dishes', true, 0);
-const task2 = new TaskObj('Complete to do list', true, 1);
-const taskArr = [];
-taskArr.push(task1, task2);
-
-const display = (item, index) => {
-  //  Variables
-
-  const taskIndex = taskArr[index].index;
-  const taskSection = document.querySelector('#taskSection');
-  const div = document.createElement('div');
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  const span = document.createElement('span');
-  span.innerHTML = '&#8942;';
-  span.classList.add('symbols');
-  const taskText = document.createElement('span');
-
-  //  Display Actions
-
-  taskText.innerHTML = taskArr[taskIndex].description;
-  div.appendChild(checkbox);
-  div.appendChild(taskText);
-  div.appendChild(span);
-  taskSection.appendChild(div);
 };
 
-taskArr.forEach(display);
+display();
