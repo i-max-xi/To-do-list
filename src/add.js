@@ -12,6 +12,9 @@ export class TaskObj {
   static i = 0;
 
   static x = 0;
+
+  static old = JSON.parse(localStorage.getItem("Tasks"));
+
 }
 
 // remove and rearrange
@@ -46,6 +49,9 @@ const editTask = (e) => {
 
   OKbtn.addEventListener('click', () => {
     content.innerText = newContent.value;
+    TaskObj.taskArr[clickedEdit.id].description = newContent.value;
+    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+    console.log(TaskObj.old[clickedEdit.id].description);
     newContent.remove();
     OK.remove();
   });
