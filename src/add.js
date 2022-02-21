@@ -59,6 +59,7 @@ const addItem = () => {
 
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
+  checkbox.classList.add('checks');
 
   const edit = document.createElement('span');
   edit.innerHTML = '&#9998;';
