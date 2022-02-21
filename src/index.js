@@ -11,7 +11,7 @@ class TaskObj {
 //  Code Action
 
 const task1 = new TaskObj('Wash the dishes', true, 0);
-const task2 = new TaskObj('Complete to do list', true, 1);
+const task2 = new TaskObj('Complete the to do list', true, 1);
 const taskArr = [];
 taskArr.push(task1, task2);
 
