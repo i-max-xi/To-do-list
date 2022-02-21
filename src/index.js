@@ -17,6 +17,8 @@ const display = () => {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.classList.add('checks');
+    checkbox.id = Add.TaskObj.z;
+    Add.TaskObj.z += 1;
 
     const edit = document.createElement('span');
     edit.innerHTML = '&#9998;';
@@ -69,7 +71,18 @@ const display = () => {
     checkBtn.forEach((e) => {
       e.addEventListener('change', interact.CheckFunct);
     });
+
+    // check those with true
+    if(Add.TaskObj.old[p].completed == true){
+      checkbox.setAttribute('checked','true');
+    }
   }
+  console.log(Add.TaskObj.taskArr);
 };
 
 display();
+
+const clearBtn = document.querySelector('#clear');
+
+
+clearBtn.addEventListener('click', interact.clear);

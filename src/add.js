@@ -1,3 +1,4 @@
+import { CheckFunct } from "./interact.js";
 export class TaskObj {
   constructor(description, completed, index) {
     this.description = description;
@@ -9,9 +10,11 @@ export class TaskObj {
 
   static taskSection = document.querySelector('#taskSection');
 
-  static i = 0;
+  static i = 0; // delete ID
 
-  static x = 0;
+  static x = 0; // edit ID
+
+  static z = 0; //checkbox ID
 
   static old = JSON.parse(localStorage.getItem('Tasks'));
 }
@@ -64,6 +67,8 @@ const addItem = () => {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.classList.add('checks');
+  checkbox.id = TaskObj.z;
+  TaskObj.z += 1;
 
   const edit = document.createElement('span');
   edit.innerHTML = '&#9998;';
@@ -111,6 +116,13 @@ const addItem = () => {
     const delBtn = document.querySelectorAll('.delSymbol');
     delBtn.forEach((e) => {
       e.addEventListener('click', removeTask);
+    });
+
+    //implement check function
+
+    const checkBtn = document.querySelectorAll('.checks');
+    checkBtn.forEach((e) => {
+      e.addEventListener('change', CheckFunct);
     });
   }
 };
