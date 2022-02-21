@@ -1,3 +1,5 @@
+const taskArr = [...JSON.parse(localStorage.getItem('Tasks'))];
+
 const CheckFunct = (e) => {
   const clickedCheck = e.target;
   if (clickedCheck.checked) {
@@ -25,13 +27,15 @@ const clearArrItem = (el) => {
 const clear = () => {
   const completed = document.querySelectorAll('input:checked');
 
-  completed.forEach((element) => {
-    element.parentNode.remove();
-    taskArr.splice(element.index, 1);
-  });
-  taskArr.filter(clearArrItem);
-  taskArr.forEach(rearrange);
-  localStorage.setItem('Tasks', JSON.stringify(taskArr));
+  if (completed) {
+    completed.forEach((element) => {
+      element.parentNode.remove();
+      taskArr.splice(element.index, 1);
+    });
+    taskArr.filter(clearArrItem);
+    taskArr.forEach(rearrange);
+    localStorage.setItem('Tasks', JSON.stringify(taskArr));
+  }
 };
 
 export { CheckFunct, clear };

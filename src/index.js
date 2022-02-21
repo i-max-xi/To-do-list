@@ -2,9 +2,9 @@
 
 import './style.css';
 import * as Add from './add.js';
-import * as interact from './interact.js';
+import { CheckFunct, clear } from './interact.js';
 
-taskArr = [];
+const taskArr = [];
 
 const Enter = document.querySelector('#enter');
 
@@ -42,7 +42,7 @@ const display = () => {
     const taskText = document.createElement('span');
 
     taskText.innerHTML = Add.TaskObj.old[p].description;
-    Add.taskArr.push(Add.TaskObj.old[p]);
+    taskArr.push(Add.TaskObj.old[p]);
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);
@@ -66,13 +66,6 @@ const display = () => {
       e.addEventListener('click', Add.removeTask);
     });
 
-    //  implement check function
-
-    const checkBtn = document.querySelectorAll('.checks');
-    checkBtn.forEach((e) => {
-      e.addEventListener('change', interact.CheckFunct);
-    });
-
     // check those with true
     if (Add.TaskObj.old[p].completed === true) {
       checkbox.setAttribute('checked', 'true');
@@ -82,6 +75,13 @@ const display = () => {
 
 display();
 
+//  implement check function
+
+const checkBtn = document.querySelectorAll('.checks');
+checkBtn.forEach((btn) => {
+  btn.addEventListener('change', CheckFunct);
+});
+
 const clearBtn = document.querySelector('#clear');
 
-clearBtn.addEventListener('click', interact.clear);
+clearBtn.addEventListener('click', clear);

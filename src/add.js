@@ -1,5 +1,3 @@
-import { CheckFunct } from './interact.js';
-
 export class TaskObj {
   constructor(description, completed, index) {
     this.description = description;
@@ -16,6 +14,8 @@ export class TaskObj {
   static z = 0; //  checkbox ID
 
   static old = JSON.parse(localStorage.getItem('Tasks'));
+
+  static taskArr = [...JSON.parse(localStorage.getItem('Tasks'))];
 }
 
 // remove and rearrange
@@ -28,9 +28,9 @@ const removeTask = (e) => {
   const clickedRemove = e.target;
   const parent = clickedRemove.parentNode;
   parent.remove();
-  taskArr.splice(clickedRemove.id, 1);
-  taskArr.forEach(rearrange);
-  localStorage.setItem('Tasks', JSON.stringify(taskArr));
+  TaskObj.taskArr.splice(clickedRemove.id, 1);
+  TaskObj.taskArr.forEach(rearrange);
+  localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
 };
 
 const editTask = (e) => {
@@ -50,8 +50,8 @@ const editTask = (e) => {
 
   OKbtn.addEventListener('click', () => {
     content.innerText = newContent.value;
-    taskArr[clickedEdit.id].description = newContent.value;
-    localStorage.setItem('Tasks', JSON.stringify(taskArr));
+    TaskObj.taskArr[clickedEdit.id].description = newContent.value;
+    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
     newContent.remove();
     OK.remove();
   });
@@ -90,9 +90,10 @@ const addItem = () => {
   //  implementation
 
   if (inputted !== '') {
-    const taskItem = new TaskObj(inputted, false, taskArr.length + 1);
-    taskArr.splice(taskArr.length, 0, taskItem);
-    taskText.innerHTML = taskArr[taskArr.length - 1].description;
+    const taskItem = new TaskObj(inputted, false, TaskObj.taskArr.length + 1);
+    TaskObj.taskArr.splice(TaskObj.taskArr.length, 0, taskItem);
+    taskText.innerHTML =
+      TaskObj.taskArr[TaskObj.taskArr.length - 1].description;
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);
@@ -101,7 +102,7 @@ const addItem = () => {
     newdiv.appendChild(edit);
     TaskObj.taskSection.appendChild(newdiv);
     document.querySelector('input').value = '';
-    localStorage.setItem('Tasks', JSON.stringify(taskArr));
+    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
 
     //  implement edit btn
 
@@ -115,13 +116,6 @@ const addItem = () => {
     const delBtn = document.querySelectorAll('.delSymbol');
     delBtn.forEach((e) => {
       e.addEventListener('click', removeTask);
-    });
-
-    //  implement check function
-
-    const checkBtn = document.querySelectorAll('.checks');
-    checkBtn.forEach((e) => {
-      e.addEventListener('change', CheckFunct);
     });
   }
 };
