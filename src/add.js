@@ -92,8 +92,7 @@ const addItem = () => {
   if (inputted !== '') {
     const taskItem = new TaskObj(inputted, false, TaskObj.taskArr.length + 1);
     TaskObj.taskArr.splice(TaskObj.taskArr.length, 0, taskItem);
-    taskText.innerHTML =
-      TaskObj.taskArr[TaskObj.taskArr.length - 1].description;
+    taskText.innerHTML = TaskObj.taskArr[TaskObj.taskArr.length - 1].description;
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);
