@@ -1,5 +1,3 @@
-
-
 const CheckFunct = (e) => {
   const old = JSON.parse(localStorage.getItem('Tasks'));
   const taskArr = [...old];

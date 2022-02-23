@@ -4,16 +4,15 @@ import './style.css';
 import * as Add from './add.js';
 import { CheckFunct, clear } from './interact.js';
 
-let taskArr = [];
+const taskArr = [];
 
-if(JSON.parse(localStorage.getItem('Tasks')) === null){
-  const testArr =   {
+if (JSON.parse(localStorage.getItem('Tasks')) === null) {
+  const testArr = {
     description: 'Buy me a coffee',
     completed: false,
-    index: 0
+    index: 1,
   };
   taskArr.push(testArr);
-  
   localStorage.setItem('Tasks', JSON.stringify(taskArr));
 }
 
@@ -86,8 +85,8 @@ const display = () => {
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((btn) => {
-    btn.addEventListener('change', CheckFunct);
-});
+      btn.addEventListener('change', CheckFunct);
+    });
   }
 };
 

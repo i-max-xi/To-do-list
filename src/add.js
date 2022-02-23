@@ -1,15 +1,14 @@
-import { CheckFunct } from "./interact.js";
+import { CheckFunct } from './interact.js';
 
 let taskArr = [];
 
-if(JSON.parse(localStorage.getItem('Tasks')) === null){
+if (JSON.parse(localStorage.getItem('Tasks')) === null) {
   const testArr = {
     description: 'Buy me a coffee',
     completed: false,
-    index: 0
+    index: 1,
   };
   taskArr.push(testArr);
-  
   localStorage.setItem('Tasks', JSON.stringify(taskArr));
 }
 
@@ -29,11 +28,9 @@ export class TaskObj {
   static z = 0; //  checkbox ID
 
   static old = JSON.parse(localStorage.getItem('Tasks'));
-
 }
 
 taskArr = [...TaskObj.old];
-
 
 // remove and rearrange
 
@@ -134,13 +131,13 @@ const addItem = () => {
       e.addEventListener('click', removeTask);
     });
     
-    //  implement check function
+   //  implement check function
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((btn) => {
     btn.addEventListener('change', CheckFunct);
-});
-  }
+      });
+      }
 };
 
 export { addItem, editTask, removeTask };
