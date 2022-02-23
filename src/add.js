@@ -130,14 +130,14 @@ const addItem = () => {
     delBtn.forEach((e) => {
       e.addEventListener('click', removeTask);
     });
-    
-   //  implement check function
+
+    //  implement check function
 
     const checkBtn = document.querySelectorAll('.checks');
     checkBtn.forEach((btn) => {
-    btn.addEventListener('change', CheckFunct);
-      });
-      }
+      btn.addEventListener('change', CheckFunct);
+    });
+  }
 };
 
 export { addItem, editTask, removeTask };
