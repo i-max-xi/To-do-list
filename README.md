@@ -19,6 +19,11 @@ Click [here](https://i-max-xi.github.io/To-do-list/) to get a live preview of th
 git clone  https://github.com/i-max-xi/To-do-list.git <Your-Build-Directory>
 ```
 
+## Deploy local
+```
+npm start
+```
+
 ## Getting packages and debuging with Stylelint
 ```
 npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x

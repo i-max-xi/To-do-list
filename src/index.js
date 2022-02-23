@@ -2,15 +2,23 @@
 
 import './style.css';
 import * as Add from './add.js';
-// import * as interact from './interact.js';
+import { CheckFunct, clear } from './interact.js';
+
+const taskArr = [];
+
+if (JSON.parse(localStorage.getItem('Tasks')) === null) {
+  const testArr = {
+    description: 'Buy me a coffee',
+    completed: false,
+    index: 1,
+  };
+  taskArr.push(testArr);
+  localStorage.setItem('Tasks', JSON.stringify(taskArr));
+}
 
 const Enter = document.querySelector('#enter');
 
 Enter.addEventListener('click', Add.addItem);
-
-// if(interact.theCheckbox){
-//     interact.CheckFunct();
-// }
 
 const display = () => {
   for (let p = 0; p < Add.TaskObj.old.length; p += 1) {
@@ -21,6 +29,8 @@ const display = () => {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.classList.add('checks');
+    checkbox.id = Add.TaskObj.z;
+    Add.TaskObj.z += 1;
 
     const edit = document.createElement('span');
     edit.innerHTML = '&#9998;';
@@ -42,7 +52,7 @@ const display = () => {
     const taskText = document.createElement('span');
 
     taskText.innerHTML = Add.TaskObj.old[p].description;
-    Add.TaskObj.taskArr.push(Add.TaskObj.old[p]);
+    taskArr.push(Add.TaskObj.old[p]);
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);
@@ -65,7 +75,23 @@ const display = () => {
     delBtn.forEach((e) => {
       e.addEventListener('click', Add.removeTask);
     });
+
+    // check those with true
+    if (Add.TaskObj.old[p].completed === true) {
+      checkbox.setAttribute('checked', 'true');
+    }
+
+    //  implement check function
+
+    const checkBtn = document.querySelectorAll('.checks');
+    checkBtn.forEach((btn) => {
+      btn.addEventListener('change', CheckFunct);
+    });
   }
 };
 
 display();
+
+const clearBtn = document.querySelector('#clear');
+
+clearBtn.addEventListener('click', clear);
