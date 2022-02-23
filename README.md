@@ -21,7 +21,7 @@ git clone  https://github.com/i-max-xi/To-do-list.git <Your-Build-Directory>
 
 ## Deploy local
 ```
-Command npm start
+npm start
 ```
 
 ## Getting packages and debuging with Stylelint
