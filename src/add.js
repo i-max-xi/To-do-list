@@ -1,3 +1,18 @@
+import { CheckFunct } from "./interact.js";
+
+let taskArr = [];
+
+if(JSON.parse(localStorage.getItem('Tasks')) === null){
+  const testArr = {
+    description: 'Buy me a coffee',
+    completed: false,
+    index: 0
+  };
+  taskArr.push(testArr);
+  
+  localStorage.setItem('Tasks', JSON.stringify(taskArr));
+}
+
 export class TaskObj {
   constructor(description, completed, index) {
     this.description = description;
@@ -15,8 +30,10 @@ export class TaskObj {
 
   static old = JSON.parse(localStorage.getItem('Tasks'));
 
-  static taskArr = [...JSON.parse(localStorage.getItem('Tasks'))];
 }
+
+taskArr = [...TaskObj.old];
+
 
 // remove and rearrange
 
@@ -28,9 +45,9 @@ const removeTask = (e) => {
   const clickedRemove = e.target;
   const parent = clickedRemove.parentNode;
   parent.remove();
-  TaskObj.taskArr.splice(clickedRemove.id, 1);
-  TaskObj.taskArr.forEach(rearrange);
-  localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+  taskArr.splice(clickedRemove.id, 1);
+  taskArr.forEach(rearrange);
+  localStorage.setItem('Tasks', JSON.stringify(taskArr));
 };
 
 const editTask = (e) => {
@@ -50,8 +67,8 @@ const editTask = (e) => {
 
   OKbtn.addEventListener('click', () => {
     content.innerText = newContent.value;
-    TaskObj.taskArr[clickedEdit.id].description = newContent.value;
-    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+    taskArr[clickedEdit.id].description = newContent.value;
+    localStorage.setItem('Tasks', JSON.stringify(taskArr));
     newContent.remove();
     OK.remove();
   });
@@ -90,9 +107,9 @@ const addItem = () => {
   //  implementation
 
   if (inputted !== '') {
-    const taskItem = new TaskObj(inputted, false, TaskObj.taskArr.length + 1);
-    TaskObj.taskArr.splice(TaskObj.taskArr.length, 0, taskItem);
-    taskText.innerHTML = TaskObj.taskArr[TaskObj.taskArr.length - 1].description;
+    const taskItem = new TaskObj(inputted, false, taskArr.length + 1);
+    taskArr.splice(taskArr.length, 0, taskItem);
+    taskText.innerHTML = taskArr[taskArr.length - 1].description;
     taskText.classList.add('taskElement');
     newdiv.appendChild(checkbox);
     newdiv.appendChild(taskText);
@@ -101,7 +118,7 @@ const addItem = () => {
     newdiv.appendChild(edit);
     TaskObj.taskSection.appendChild(newdiv);
     document.querySelector('input').value = '';
-    localStorage.setItem('Tasks', JSON.stringify(TaskObj.taskArr));
+    localStorage.setItem('Tasks', JSON.stringify(taskArr));
 
     //  implement edit btn
 
@@ -116,6 +133,13 @@ const addItem = () => {
     delBtn.forEach((e) => {
       e.addEventListener('click', removeTask);
     });
+    
+    //  implement check function
+
+    const checkBtn = document.querySelectorAll('.checks');
+    checkBtn.forEach((btn) => {
+    btn.addEventListener('change', CheckFunct);
+});
   }
 };
 

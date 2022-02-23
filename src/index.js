@@ -4,7 +4,18 @@ import './style.css';
 import * as Add from './add.js';
 import { CheckFunct, clear } from './interact.js';
 
-const taskArr = [];
+let taskArr = [];
+
+if(JSON.parse(localStorage.getItem('Tasks')) === null){
+  const testArr =   {
+    description: 'Buy me a coffee',
+    completed: false,
+    index: 0
+  };
+  taskArr.push(testArr);
+  
+  localStorage.setItem('Tasks', JSON.stringify(taskArr));
+}
 
 const Enter = document.querySelector('#enter');
 
@@ -70,17 +81,17 @@ const display = () => {
     if (Add.TaskObj.old[p].completed === true) {
       checkbox.setAttribute('checked', 'true');
     }
+
+    //  implement check function
+
+    const checkBtn = document.querySelectorAll('.checks');
+    checkBtn.forEach((btn) => {
+    btn.addEventListener('change', CheckFunct);
+});
   }
 };
 
 display();
-
-//  implement check function
-
-const checkBtn = document.querySelectorAll('.checks');
-checkBtn.forEach((btn) => {
-  btn.addEventListener('change', CheckFunct);
-});
 
 const clearBtn = document.querySelector('#clear');
 
