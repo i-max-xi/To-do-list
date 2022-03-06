@@ -18,12 +18,13 @@ const rearrange = (item, pos) => {
 };
 
 const clearArrItem = (el) => {
-  const old = JSON.parse(localStorage.getItem('Tasks'));
-  const taskArr = [...old];
-  if (el.completed === true) {
-    taskArr.splice(el.index, 1);
+  // if (el.completed === true) {
+  //   taskArr.splice(el.index, 1);
+  // }
+  if(el.completed !== true){
+    console.log(el);
+    return el;
   }
-  return el;
 };
 
 const clear = () => {

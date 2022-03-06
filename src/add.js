@@ -74,7 +74,7 @@ const editTask = (e) => {
 const addItem = () => {
   //  Variables
 
-  const inputted = document.querySelector('input').value;
+  const inputted = document.querySelector('#enterTask').value;
   const newdiv = document.createElement('div');
 
   const checkbox = document.createElement('input');

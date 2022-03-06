@@ -16,10 +16,18 @@ if (JSON.parse(localStorage.getItem('Tasks')) === null) {
   localStorage.setItem('Tasks', JSON.stringify(taskArr));
 }
 
+//implementing "add" event listeners
 const Enter = document.querySelector('#enter');
+Enter.addEventListener('keyup',Add.addItem);
 
-Enter.addEventListener('click', Add.addItem);
+const enterTask = document.querySelector('#enterTask');
+enterTask.addEventListener("keyup", (event) => {
+  if (event.keyCode === 13) {
+    Add.addItem();
+  }
+});
 
+//Implementing display function
 const display = () => {
   for (let p = 0; p < Add.TaskObj.old.length; p += 1) {
     //  Variables
