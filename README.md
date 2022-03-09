@@ -8,6 +8,11 @@
 The endgoal of the project is to build the application using ES6 modules.
 Click [here](https://i-max-xi.github.io/To-do-list/dist/) to get a live preview of the project.
 
+## Built With:
+ - HTML
+ - CSS
+ - JavaScript.
+
 ## Stages
 1: List structure.
 2: Interactive list.
