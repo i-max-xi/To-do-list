@@ -1,4 +1,4 @@
-# copyright 2022, David Ouma
+# copyright 2022, Appiah Maxwell Gyimah
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this GRGF website and associated documentation files, to deal in the GRGF website without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the [APP TYPE], and to permit persons to whom the GRGF website is furnished to do so, subject to the following conditions:
 
