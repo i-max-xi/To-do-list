@@ -6,7 +6,9 @@
 > This is a solo project in the Microverse second Module. The project is an application that enables a user to add and remove activities from a list and other functionalities, making it your handy To Do List.
 
 The endgoal of the project is to build the application using ES6 modules.
-Click [here](https://i-max-xi.github.io/To-do-list/dist/) to get a live preview of the project.
+
+Click [HERE](https://i-max-xi.github.io/To-do-list/dist/) 
+to get a live preview of the project.
 
 ## Built With:
  - HTML
@@ -69,7 +71,8 @@ Give a ⭐️ if you like this project!
 
 ## Author
 
-- Maxwell [github](https://github.com/i-max-xi)
+- Appiah Maxwell Gyimah 
+  https://github.com/i-max-xi
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
