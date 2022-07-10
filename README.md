@@ -71,7 +71,7 @@ Give a ⭐️ if you like this project!
 
 ## Author
 
-- Appiah Maxwell Gyimah 
+Appiah Maxwell Gyimah 
   https://github.com/i-max-xi
 ## 📝 License
 
