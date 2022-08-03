@@ -5,7 +5,7 @@
 
 > This is a solo project in the Microverse second Module. The project is an application that enables a user to add and remove activities from a list and other functionalities, making it your handy To Do List.
 
-The endgoal of the project is to build the application using ES6 modules.
+The end goal of the project is to build the application using ES6 modules.
 
 Click [HERE](https://i-max-xi.github.io/To-do-list/dist/) 
 to get a live preview of the project.
