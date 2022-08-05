@@ -16,9 +16,9 @@ to get a live preview of the project.
  - JavaScript.
 
 ## Stages
-1: List structure.
-2: Interactive list.
-3: Add and remove items.
+ - List structure.
+ - Interactive list.
+ - Add and remove items.
 
 
 ## Cloning the project
