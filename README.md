@@ -8,7 +8,7 @@
 The end goal of the project is to build the application using and mastering ES6 modules.
 
 Click [HERE](https://i-max-xi.github.io/To-do-list/dist/) 
-to get a live preview of the project.
+to get a live preview of the project
 
 ## Built With:
  - HTML
