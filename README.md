@@ -3,7 +3,7 @@
 # To Do List
 
 
-> This is a solo project in the Microverse second Module. The project is an application that enables a user to add and remove activities from a list and other functionalities, making it your handy To Do List.
+> A solo project in the Microverse second Module. The project is an application that enables a user to add and remove activities from a list and other functionalities, making it your handy To Do List.
 
 The end goal of the project is to build the application using and mastering ES6 modules.
 
