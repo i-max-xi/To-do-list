@@ -72,7 +72,7 @@ Give a ⭐️ if you like this project!
 ## Author
 
 Appiah Maxwell Gyimah 
-  https://github.com/i-max-xi
+- https://github.com/i-max-xi
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
